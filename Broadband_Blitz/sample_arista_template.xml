@@ -1,0 +1,128 @@
+<config-template xmlns="http://tail-f.com/ns/config/1.0">
+    <devices xmlns="http://tail-f.com/ns/ncs">
+        <device>
+            <name>{$device}</name>
+            <config>
+                <vlan xmlns="http://tail-f.com/ned/arista-dcs">
+                    <vlan-list tags="merge">
+                        <id>{$vlan_id}</id>
+                        <name>{$vlan_name}</name>
+                    </vlan-list>
+                </vlan>
+                <interface xmlns="http://tail-f.com/ned/arista-dcs">
+                    <Ethernet when="{$interface_type = 'Ethernet'}" tags="merge">
+                        <name>{$interface_id}</name>
+                        <shutdown tags="delete"/>
+                        <description>{$interface_description}</description>
+                        <?if {$switchport_mode = 'access'}?>
+                        <switchport>
+                            <access>
+                                <vlan>{$vlan_id}</vlan>
+                            </access>
+                        </switchport>
+                        <service-policy>
+                            <type>qos</type>
+                            <input>Broadband</input>
+                        </service-policy>
+                        <?else?>
+                        <switchport>
+                            <mode>trunk</mode>
+                            <trunk>
+                                <allowed>
+                                    <vlan>
+                                    <ids>{$vlan_id}</ids>
+                                    </vlan>
+                                </allowed>
+                            </trunk>
+                        </switchport>
+                        <?end?>
+                        <spanning-tree>
+                            <guard>root</guard>
+                            <portfast when="{$switchport_mode = 'access'"/>
+                        </spanning-tree>
+                        <logging>
+                            <event>
+                            <link-status>yes</link-status>
+                            </event>
+                        </logging>
+                        <snmp>
+                            <trap>
+                            <link-change>false</link-change>
+                            </trap>
+                        </snmp>
+                        <storm-control>
+                            <broadcast>
+                            <level>
+                                <maximum-bandwidth>1.0</maximum-bandwidth>
+                            </level>
+                            </broadcast>
+                            <multicast>
+                            <level>
+                                <maximum-bandwidth>1.0</maximum-bandwidth>
+                            </level>
+                            </multicast>
+                            <unknown-unicast>
+                            <level>
+                                <maximum-bandwidth>1.0</maximum-bandwidth>
+                            </level>
+                            </unknown-unicast>
+                        </storm-control>
+                    </Ethernet>
+                    <Port-Channel when="{$interface_type = 'Port-Channel'}" tags="merge">
+                        <name>{$interface_id}</name>
+                        <shutdown tags="delete"/>
+                        <description>{$interface_description}</description>
+                        <?if {$switchport_mode = 'access'}?>
+                        <switchport>
+                            <access>
+                                <vlan>{$vlan_id}</vlan>
+                            </access>
+                        </switchport>
+                        <service-policy>
+                            <type>qos</type>
+                            <input>Broadband</input>
+                        </service-policy>
+                        <?else?>
+                        <switchport>
+                            <mode>trunk</mode>
+                            <trunk>
+                                <allowed>
+                                    <vlan>
+                                    <ids>{$vlan_id}</ids>
+                                    </vlan>
+                                </allowed>
+                            </trunk>
+                        </switchport>
+                        <?end?>
+                        <spanning-tree>
+                            <guard>root</guard>
+                            <portfast when="{$switchport_mode = 'access'"/>
+                        </spanning-tree>
+                        <logging>
+                            <event>
+                            <link-status>yes</link-status>
+                            </event>
+                        </logging>
+                        <storm-control>
+                            <broadcast>
+                            <level>
+                                <maximum-bandwidth>1.0</maximum-bandwidth>
+                            </level>
+                            </broadcast>
+                            <multicast>
+                            <level>
+                                <maximum-bandwidth>1.0</maximum-bandwidth>
+                            </level>
+                            </multicast>
+                            <unknown-unicast>
+                            <level>
+                                <maximum-bandwidth>1.0</maximum-bandwidth>
+                            </level>
+                            </unknown-unicast>
+                        </storm-control>
+                    </Port-Channel>
+                </interface>
+            </config>
+        </device>
+    </devices>
+</config-template>
