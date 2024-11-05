@@ -19,7 +19,7 @@ Reduced manual effort
 Faster service suspend and resume
 Reduced operational costs
 ## Top Core Feature	
-1. Automatic Identification of L3 Target : L3 device is detected automatically for the ACL changes.
-2. Vendor-neutral automation Cisco or Nokia or Arista – All device types can be identified.
-3. Real-time network topology mapping: Continuously monitor and update network topology information, including device types, interfaces, and connectivity.
+1. **Automatic Identification of L3 Target** : L3 device is detected automatically for the ACL changes.
+2. **Vendor-neutral automation Cisco or Nokia or Arista** – All device types can be identified.
+3. **Real-time network topology mapping**: Continuously monitor and update network topology information, including device types, interfaces, and connectivity.
 
