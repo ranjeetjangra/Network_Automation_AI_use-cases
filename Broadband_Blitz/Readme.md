@@ -37,7 +37,7 @@ There are various service flavors of enterprise broadband services - professiona
 1) Professional
 2) Business Dynamic
 3) Premium Services with below flavors:
-    a) Standard
-    b) Single Home
-    c) Single Access Switch
+- Standard
+- Single Home
+- Single Access Switch
 4) Additional IP request for premium services
