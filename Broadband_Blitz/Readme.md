@@ -32,3 +32,12 @@ Eliminate the time-consuming and error-prone manual configuration currently used
 5) Automatic PE and link identification.
 6) Ability to automate the MST / ICCP aware allocation of VLANs during the provisioning process.
 7) Support all device types Cisco-IOS,IOS-XR, Arista and Third party orchestrator e.g.. Nokia NSP on the Southbound.
+## Details
+There are various service flavors of enterprise broadband services - professional, essential / business dynamic and premium services. Depending on how and where the last mile access switch is connected, there could be variations of the services.
+1) Professional
+2) Business Dynamic
+3) Premium Services with below flavors:
+    a) Standard
+    b) Single Home
+    c) Single Access Switch
+4) Additional IP request for premium services
