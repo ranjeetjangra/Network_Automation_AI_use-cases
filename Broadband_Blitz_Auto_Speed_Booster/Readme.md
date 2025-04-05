@@ -22,3 +22,8 @@ Broadband Bulk speed upgrade business Team
 - Real-Time Monitoring and Reporting Dashboard using downloadable reports post execution.
 - On-Demand Speed Adjustment Options
 - Automated Rollback and Error Handling Automation
+## Details
+- This use-case is developed to upgrade the target upload / download speed on layer 3 interfaces where the enterprise broadband services are terminated. This is identified by the contract id and description under the interface.
+- Bulk speed upgrade starts when a user provides a list of contract ID, target upload and target download speed.
+- NSO identifies the layer 3 layer, target device and performs the necessary upgrades.
+- NSO attempts to have updated customer profile database at any point in time.
