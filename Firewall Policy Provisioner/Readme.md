@@ -32,3 +32,5 @@ ISP internal teams of various persona's like Requestor, ISRM, TSO, PLANNING, IPS
 7) User dashboard for all persona's .
 8) User dashboard for Success Failure Rate of Requests.
 9) Export the detailed request's report with required attributes.
+## Details
+du-telecom wants to automate the provisioning for the security policies on the network. This is to address the users intention to provide connectivity between User/Applicaton to User/Application. This intent is described in the form of Communication Matrix which is translated into Firewall Provisioing by the SPIS/NSO solution
